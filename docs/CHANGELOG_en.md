@@ -5,6 +5,12 @@ This document tracks user-facing updates in the public repository. For future Gi
 
 ## Unreleased
 
+### PHP security patches (php2shell)
+
+- Raised runtime and dependency constraints to PHP `8.4.27` / `8.3.36` to fix CVE-2026-109618 and CVE-2026-109619 (unauthenticated RCE).
+- Docker base images are pinned to `php:8.4.27-cli-bookworm` and `php:8.4.27-fpm-bookworm`; Composer requires `~8.3.36 || ~8.4.27`.
+- Deployed instances must pull the new base images, rebuild app/web images, and roll restart; host packages must upgrade to the patched releases above.
+
 ### Link pool and live prompt testing
 
 - Distribution management adds internal link placement for the primary site and first-party hosted sites, including a link library, import preflight, campaigns, recommendation previews, site controls, and an emergency stop.

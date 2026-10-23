@@ -12,8 +12,10 @@ require_once __DIR__.'/StandaloneBundle.php';
 require_once __DIR__.'/StandaloneInstaller.php';
 
 try {
-    if (PHP_VERSION_ID < 80300) {
-        throw new RuntimeException('PHP 8.3 or newer is required.');
+    $phpSupported = (version_compare(PHP_VERSION, '8.3.36', '>=') && version_compare(PHP_VERSION, '8.4.0', '<'))
+        || (version_compare(PHP_VERSION, '8.4.27', '>=') && version_compare(PHP_VERSION, '8.5.0', '<'));
+    if (! $phpSupported) {
+        throw new RuntimeException('PHP 8.3.36+ or 8.4.27+ is required (php2shell security patches).');
     }
     foreach (['curl', 'fileinfo', 'mbstring', 'openssl', 'Phar', 'sodium'] as $extension) {
         if (! extension_loaded($extension)) {

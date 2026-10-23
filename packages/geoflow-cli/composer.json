@@ -4,7 +4,7 @@
     "type": "project",
     "license": "AGPL-3.0-only",
     "require": {
-        "php": "^8.3",
+        "php": "~8.3.36 || ~8.4.27",
         "ext-curl": "*",
         "ext-fileinfo": "*",
         "ext-mbstring": "*",
@@ -21,7 +21,7 @@
         }
     },
     "config": {
-        "platform": {"php": "8.3.0"},
+        "platform": {"php": "8.3.36"},
         "allow-plugins": false,
         "sort-packages": true
     }

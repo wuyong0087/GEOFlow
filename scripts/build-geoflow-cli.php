@@ -84,7 +84,7 @@ try {
     require_once $root.'/app/Console/GeoFlowCli/CliVersion.php';
     $manifest = json_encode([
         'schema_version' => 1, 'version' => CliVersion::VALUE,
-        'protocol_version' => '1.0', 'php' => '^8.3', 'file' => 'geoflow.phar',
+        'protocol_version' => '1.0', 'php' => '~8.3.36 || ~8.4.27', 'file' => 'geoflow.phar',
         'sha256' => hash('sha256', $archiveBytes), 'size' => strlen($archiveBytes),
     ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR)."\n";
     $signature = $key === null ? null : json_encode([

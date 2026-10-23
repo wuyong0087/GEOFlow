@@ -41,7 +41,7 @@ class ReleaseInstallerTest extends TestCase
     private function bundle(string $version, int $sequence, string $content = 'verified'): string
     {
         $bytes = '<?php echo '.var_export($content, true).';';
-        $manifest = json_encode(['schema_version' => 2, 'protocol_version' => '1.0', 'version' => $version, 'release_sequence' => $sequence, 'source_commit' => str_repeat('a', 40), 'file' => 'geoflow.phar', 'php' => '^8.3', 'size' => strlen($bytes), 'sha256' => hash('sha256', $bytes)]);
+        $manifest = json_encode(['schema_version' => 2, 'protocol_version' => '1.0', 'version' => $version, 'release_sequence' => $sequence, 'source_commit' => str_repeat('a', 40), 'file' => 'geoflow.phar', 'php' => '~8.3.36 || ~8.4.27', 'size' => strlen($bytes), 'sha256' => hash('sha256', $bytes)]);
         file_put_contents($this->directory.'/bundle/geoflow.phar', $bytes);
         file_put_contents($this->directory.'/bundle/manifest.json', $manifest);
         file_put_contents($this->directory.'/bundle/manifest.sig', json_encode(['key_id' => 'test', 'signature' => base64_encode(sodium_crypto_sign_detached($manifest, $this->secret))]));

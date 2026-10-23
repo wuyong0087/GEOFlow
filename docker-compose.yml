@@ -42,7 +42,7 @@ services:
       context: .
       dockerfile: docker/Dockerfile
       args:
-        PHP_CLI_IMAGE: ${PHP_CLI_IMAGE:-php:8.4-cli-bookworm}
+        PHP_CLI_IMAGE: ${PHP_CLI_IMAGE:-php:8.4.27-cli-bookworm}
         COMPOSER_IMAGE: ${COMPOSER_IMAGE:-composer:2}
         PECL_REDIS_VERSION: ${PECL_REDIS_VERSION:-6.3.0}
         DEBIAN_MIRROR: ${DEBIAN_MIRROR:-mirrors.tuna.tsinghua.edu.cn}

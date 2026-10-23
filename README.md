@@ -147,7 +147,7 @@ GEOFlow 适合拥有真实业务资料、明确审核责任和持续运营计划
 
 | 组件 | 要求 |
 |------|------|
-| PHP | 8.3 及以上，Docker 默认可使用 PHP 8.4 |
+| PHP | 8.3.36+ 或 8.4.27+（含 php2shell 安全补丁），Docker 默认 PHP 8.4.27 |
 | 数据库 | PostgreSQL，推荐使用 pgvector 镜像或兼容扩展 |
 | Redis | 用于队列、缓存和运行状态 |
 | Node.js | 用于前端资源构建，CI 使用 Node.js 22 |

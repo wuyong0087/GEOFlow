@@ -12,11 +12,11 @@ The supported platforms are macOS, Linux, and WSL. Native Windows can run PHP, b
 
 ## Installation And Prerequisites
 
-An installed standalone `geoflow` connects directly to an instance without Core source or full project dependencies. It requires PHP 8.3+ and the extensions listed in the [installation guide](../packages/geoflow-cli/README.md). Trusted local signed bundles can be installed now; an official download channel remains pending.
+An installed standalone `geoflow` connects directly to an instance without Core source or full project dependencies. It requires PHP 8.3.36+ / 8.4.27+ and the extensions listed in the [installation guide](../packages/geoflow-cli/README.md). Trusted local signed bundles can be installed now; an official download channel remains pending.
 
 Source contributors can also run the repository entrypoint. This path requires:
 
-- PHP 8.3 or later.
+- PHP 8.3.36+ or 8.4.27+ (php2shell security patches).
 - Project dependencies installed with Composer.
 - Network access to a GEOFlow instance with `/api/v1` enabled.
 - An admin login or an API token with the required scopes.

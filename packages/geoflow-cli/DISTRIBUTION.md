@@ -6,7 +6,7 @@
 
 ## 固定版本安装
 
-需要 PHP 8.3+ 及 README 所列扩展、Python 3.10+、支持下列 attestation 参数的 GitHub CLI；安装平台为 macOS、Linux 和 WSL。安装器不会安装系统依赖或取得管理员权限。
+需要 PHP 8.3.36+ / 8.4.27+ 及 README 所列扩展、Python 3.10+、支持下列 attestation 参数的 GitHub CLI；安装平台为 macOS、Linux 和 WSL。安装器不会安装系统依赖或取得管理员权限。
 
 先从已批准的发行记录取得 CLI 版本、源码提交、发行归档 SHA-256。CLI 标签为 `cli-v<VERSION>`，独立于 Core 标签。所有 CLI 和信任包 Release 都使用 `--latest=false`，Core 的 `releases/latest/download/version.json` 保持属于 Core。
 
@@ -95,4 +95,4 @@ python3 -B -m unittest discover -s packages/geoflow-cli/tests -p 'test_*.py'
 php packages/geoflow-cli/smoke.php
 ```
 
-`cli-check.yml` 在 PHP 8.3 和 8.4 执行这些门禁。主发布仍需要真实公开资产、原生 macOS/Linux/WSL、实际 Core 版本对及真实密钥轮换验收；本地临时密钥测试不能替代它们。
+`cli-check.yml` 在 PHP 8.3.36 和 8.4.27 执行这些门禁。主发布仍需要真实公开资产、原生 macOS/Linux/WSL、实际 Core 版本对及真实密钥轮换验收；本地临时密钥测试不能替代它们。

@@ -2,7 +2,7 @@
 
 ## Installation and connection
 
-Use an existing `geoflow` executable on PATH. It can run outside a GEOFlow checkout with PHP 8.3+ and the declared extensions. This iteration includes an attested candidate workflow, a versioned trust-bundle verifier and a signed bundle installer. Official public assets and production trust roots remain release gates. Do not invent a download URL or trust a key supplied by the same unverified bundle. Install from a maintainer-provided bundle with an independently trusted key file, following its installer instructions. Do not pipe remote scripts into a shell.
+Use an existing `geoflow` executable on PATH. It can run outside a GEOFlow checkout with PHP 8.3.36+ / 8.4.27+ and the declared extensions. This iteration includes an attested candidate workflow, a versioned trust-bundle verifier and a signed bundle installer. Official public assets and production trust roots remain release gates. Do not invent a download URL or trust a key supplied by the same unverified bundle. Install from a maintainer-provided bundle with an independently trusted key file, following its installer instructions. Do not pipe remote scripts into a shell.
 
 Run these with the intended instance and profile, substituting the user's values:
 

@@ -127,7 +127,7 @@ SH;
             '--env', 'APP_KEY=base64:'.base64_encode(str_repeat('k', 32)),
             '--mount', 'type=tmpfs,destination=/var/www/html/storage',
             '--mount', 'type=bind,source='.$root.'/docker/entrypoint.prod.sh,destination=/tmp/entrypoint.prod.sh,readonly',
-            '--entrypoint', 'sh', 'php:8.4-fpm-bookworm', '-c', $script,
+            '--entrypoint', 'sh', 'php:8.4.27-fpm-bookworm', '-c', $script,
         ], null, null, null, 30);
         try {
             $process->mustRun();
@@ -204,7 +204,7 @@ SH;
             '--env', 'REVIEW_ENVIRONMENT_VALID='.($environmentKey === $validKey ? 'true' : 'false'),
             '--env', 'REVIEW_GENERATED_KEY='.$validKey,
             '--mount', 'type=bind,source='.$root.'/'.$entrypoint.',destination=/tmp/entrypoint.sh,readonly',
-            '--entrypoint', 'sh', 'php:8.4-fpm-bookworm', '-c', $script,
+            '--entrypoint', 'sh', 'php:8.4.27-fpm-bookworm', '-c', $script,
         ], null, null, null, 30);
         try {
             $process->mustRun();

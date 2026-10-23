@@ -26,7 +26,7 @@ set -a
 eval "$(grep -E '^(PHP_CLI_IMAGE|COMPOSER_IMAGE|NODE_IMAGE|PGVECTOR_IMAGE|REDIS_IMAGE|NGINX_IMAGE)=' .env 2>/dev/null || true)"
 set +a
 
-PHP_CLI_IMAGE="${PHP_CLI_IMAGE:-php:8.4-cli-bookworm}"
+PHP_CLI_IMAGE="${PHP_CLI_IMAGE:-php:8.4.27-cli-bookworm}"
 COMPOSER_IMAGE="${COMPOSER_IMAGE:-composer:2}"
 NODE_IMAGE="${NODE_IMAGE:-node:22-bookworm-slim}"
 PGVECTOR_IMAGE="${PGVECTOR_IMAGE:-pgvector/pgvector:pg16}"

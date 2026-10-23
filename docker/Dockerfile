@@ -1,4 +1,4 @@
-ARG PHP_CLI_IMAGE=php:8.4-cli-bookworm
+ARG PHP_CLI_IMAGE=php:8.4.27-cli-bookworm
 ARG COMPOSER_IMAGE=composer:2
 ARG PECL_REDIS_VERSION=6.3.0
 # 国内 apt 默认清华源；不稳定时可构建参数覆盖，例如 mirrors.ustc.edu.cn / mirrors.aliyun.com

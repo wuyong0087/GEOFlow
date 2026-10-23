@@ -1,6 +1,6 @@
 # GEOFlow 独立 CLI 构建与安装
 
-运行环境为 PHP 8.3+，需要 curl、fileinfo、mbstring、openssl、Phar 和 sodium 扩展。当前安装流程使用 POSIX 文件锁、原子重命名及目录持久化，适用于 macOS、Linux 和 WSL。
+运行环境为 PHP 8.3.36+ 或 8.4.27+（含 php2shell 安全补丁），需要 curl、fileinfo、mbstring、openssl、Phar 和 sodium 扩展。当前安装流程使用 POSIX 文件锁、原子重命名及目录持久化，适用于 macOS、Linux 和 WSL。
 
 正式候选、固定版本下载、独立信任根、历史回滚和四组件发行证据见 [正式分发说明](DISTRIBUTION.md)。
 

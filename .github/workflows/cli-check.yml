@@ -11,7 +11,7 @@ jobs:
   distribution:
     strategy:
       matrix:
-        php: ['8.3', '8.4']
+        php: ['8.3.36', '8.4.27']
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     steps:

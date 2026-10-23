@@ -143,7 +143,7 @@ Runtime requirements:
 
 | Component | Requirement |
 |-----------|-------------|
-| PHP | 8.3 or later; Docker may use PHP 8.4 |
+| PHP | 8.3.36+ or 8.4.27+ (php2shell security patches); Docker defaults to PHP 8.4.27 |
 | Database | PostgreSQL; pgvector image or compatible extension recommended |
 | Redis | Queues, cache, and runtime state |
 | Node.js | Frontend asset builds; CI uses Node.js 22 |

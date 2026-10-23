@@ -143,7 +143,7 @@ Requisitos:
 
 | Componente | Requisito |
 |------------|-----------|
-| PHP | 8.3 o posterior; Docker puede usar PHP 8.4 |
+| PHP | 8.3.36+ o 8.4.27+ (parches de seguridad php2shell); Docker usa PHP 8.4.27 por defecto |
 | Base de datos | PostgreSQL; se recomienda pgvector o una extensión compatible |
 | Redis | Colas, caché y estado de ejecución |
 | Node.js | Compilación del frontend; CI usa Node.js 22 |
