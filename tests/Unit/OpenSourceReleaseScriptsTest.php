@@ -56,7 +56,7 @@ class OpenSourceReleaseScriptsTest extends TestCase
     /**
      * rsync 中以斜杠开头的排除规则只作用于仓库根目录；没有斜杠时，同名目录在任意层级都会被排除。
      *
-     * @param list<string> $patterns
+     * @param  list<string>  $patterns
      */
     private function rsyncExcludes(array $patterns, string $path): bool
     {
