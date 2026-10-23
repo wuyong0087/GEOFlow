@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\V1\BrowserDeviceAuthorizationController;
 use App\Http\Controllers\Api\V1\BrowserManualPublicationController;
 use App\Http\Controllers\Api\V1\BrowserSessionController;
 use App\Http\Controllers\Api\V1\CatalogController;
+use App\Http\Controllers\Api\V1\CompetitorVideoImportController;
 use App\Http\Controllers\Api\V1\JobController;
 use App\Http\Controllers\Api\V1\ManagementOperationController;
 use App\Http\Controllers\Api\V1\ManagementSessionController;
@@ -99,6 +100,12 @@ Route::prefix('v1')
                 });
             // catalog:read — 下拉元数据（模型、提示词、库、作者、分类等）
             Route::get('catalog', [CatalogController::class, 'show'])->middleware('api.scope:catalog:read');
+
+            // competitor-videos:* — 外部采集桥接：读取监控主题并导入视频与评论
+            Route::get('competitor-video-watches', [CompetitorVideoImportController::class, 'watches'])
+                ->middleware(['api.scope:competitor-videos:read', 'throttle:60,1']);
+            Route::post('competitor-video-imports', [CompetitorVideoImportController::class, 'store'])
+                ->middleware(['api.scope:competitor-videos:write', 'throttle:30,1']);
 
             // tasks:* — 任务 CRUD、启停、入队、子 Job 列表
             Route::get('tasks', [TaskController::class, 'index'])->middleware('api.scope:tasks:read');

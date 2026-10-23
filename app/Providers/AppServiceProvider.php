@@ -23,6 +23,8 @@ use App\Services\Admin\AdminWelcomeModalService;
 use App\Services\Admin\DatabaseAiModelWriteLock;
 use App\Services\AiWorkspace\AiWorkspaceModelRuntime;
 use App\Services\AiWorkspace\TaskCreationFlow;
+use App\Services\CompetitorVideos\CompetitorVideoComposer;
+use App\Services\CompetitorVideos\CompetitorVideoRenderer;
 use App\Services\GeoFlow\AnonymousUsageTelemetry;
 use App\Services\GeoFlow\ArticleAiQualityWorkerLiveness;
 use App\Services\GeoFlow\ArticleGeoFlowService;
@@ -94,6 +96,7 @@ class AppServiceProvider extends ServiceProvider
             fn (array $state) => $this->app->make(RecoveryReconciliation::class)->assertReady($state),
         ));
         $this->app->bind(AiModelWriteLock::class, DatabaseAiModelWriteLock::class);
+        $this->app->bind(CompetitorVideoRenderer::class, CompetitorVideoComposer::class);
         $this->app->singleton(FinalOutboundSecurityPolicy::class);
         $this->app->bind(OutboundTransport::class, function () use ($fixedContextCapability): LaravelPinnedOutboundTransport {
             return new LaravelPinnedOutboundTransport($fixedContextCapability);

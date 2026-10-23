@@ -244,6 +244,8 @@ class ApiTokenService
             'articles:publish',
             'materials:read',
             'materials:write',
+            'competitor-videos:read',
+            'competitor-videos:write',
         ];
     }
 
